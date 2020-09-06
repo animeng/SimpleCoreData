@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SimpleCoreData",
+        "repositoryURL": "git@github.com:animeng/SimpleCoreData.git",
+        "state": {
+          "branch": null,
+          "revision": "00d6f90f7742d0ddaa154bcb8568717c9c20a994",
+          "version": "0.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

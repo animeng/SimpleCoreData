@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		DB56D0BA24C6E1580068C7E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB56D0B824C6E1580068C7E0 /* Main.storyboard */; };
 		DB56D0BC24C6E15B0068C7E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB56D0BB24C6E15B0068C7E0 /* Assets.xcassets */; };
 		DB56D0BF24C6E15B0068C7E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB56D0BD24C6E15B0068C7E0 /* LaunchScreen.storyboard */; };
+		DBC66A7E24F4ABD20020F9BB /* SimpleCoreData in Frameworks */ = {isa = PBXBuildFile; productRef = DBC66A7D24F4ABD20020F9BB /* SimpleCoreData */; };
+		DBC66A8224F4F80E0020F9BB /* SimpleDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DBC66A8024F4F80E0020F9BB /* SimpleDataBase.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		DB56D0BB24C6E15B0068C7E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB56D0BE24C6E15B0068C7E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB56D0C024C6E15B0068C7E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBC66A7F24F4B01A0020F9BB /* SimpleCoreData */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SimpleCoreData; path = ../..; sourceTree = "<group>"; };
+		DBC66A8124F4F80E0020F9BB /* SimpleDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleDataBase.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBC66A7E24F4ABD20020F9BB /* SimpleCoreData in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,7 @@
 		DB56D0A624C6E1580068C7E0 = {
 			isa = PBXGroup;
 			children = (
+				DBC66A7F24F4B01A0020F9BB /* SimpleCoreData */,
 				DB56D0B124C6E1580068C7E0 /* SimpleCoreDataExample */,
 				DB56D0B024C6E1580068C7E0 /* Products */,
 			);
@@ -62,6 +68,7 @@
 				DB56D0B824C6E1580068C7E0 /* Main.storyboard */,
 				DB56D0BB24C6E15B0068C7E0 /* Assets.xcassets */,
 				DB56D0BD24C6E15B0068C7E0 /* LaunchScreen.storyboard */,
+				DBC66A8024F4F80E0020F9BB /* SimpleDataBase.xcdatamodeld */,
 				DB56D0C024C6E15B0068C7E0 /* Info.plist */,
 			);
 			path = SimpleCoreDataExample;
@@ -83,6 +90,9 @@
 			dependencies = (
 			);
 			name = SimpleCoreDataExample;
+			packageProductDependencies = (
+				DBC66A7D24F4ABD20020F9BB /* SimpleCoreData */,
+			);
 			productName = SimpleCoreDataExample;
 			productReference = DB56D0AF24C6E1580068C7E0 /* SimpleCoreDataExample.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +121,9 @@
 				Base,
 			);
 			mainGroup = DB56D0A624C6E1580068C7E0;
+			packageReferences = (
+				DBC66A7C24F4ABD20020F9BB /* XCRemoteSwiftPackageReference "SimpleCoreData" */,
+			);
 			productRefGroup = DB56D0B024C6E1580068C7E0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +153,7 @@
 			files = (
 				DB56D0B724C6E1580068C7E0 /* ViewController.swift in Sources */,
 				DB56D0B324C6E1580068C7E0 /* AppDelegate.swift in Sources */,
+				DBC66A8224F4F80E0020F9BB /* SimpleDataBase.xcdatamodeld in Sources */,
 				DB56D0B524C6E1580068C7E0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +350,39 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DBC66A7C24F4ABD20020F9BB /* XCRemoteSwiftPackageReference "SimpleCoreData" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:animeng/SimpleCoreData.git";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 1.0.0;
+				minimumVersion = 0.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DBC66A7D24F4ABD20020F9BB /* SimpleCoreData */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBC66A7C24F4ABD20020F9BB /* XCRemoteSwiftPackageReference "SimpleCoreData" */;
+			productName = SimpleCoreData;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		DBC66A8024F4F80E0020F9BB /* SimpleDataBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DBC66A8124F4F80E0020F9BB /* SimpleDataBase.xcdatamodel */,
+			);
+			currentVersion = DBC66A8124F4F80E0020F9BB /* SimpleDataBase.xcdatamodel */;
+			path = SimpleDataBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DB56D0A724C6E1580068C7E0 /* Project object */;
 }

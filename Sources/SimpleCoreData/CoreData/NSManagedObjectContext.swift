@@ -9,20 +9,15 @@
 import Foundation
 import CoreData
 
-func synchronized<T>(_ lock: Any, _ body: () throws -> T) rethrows -> T {
-    objc_sync_enter(lock)
-    defer { objc_sync_exit(lock) }
-    return try body()
-}
-
 extension NSManagedObject:Entity {
     @objc open var primeKey: String {
         // implement method in subclass
         return "\(objectID)"
     }
     
-    @objc open func manageObjectDidCreate() {
+    @objc open func objectDidCreate() {
         // implement method in subclass
+        fatalError("Subclass must be implement")
     }
     
     open class var entityName: String? {
@@ -67,7 +62,7 @@ extension NSManagedObject:Entity {
         if let manageContext = context as? NSManagedObjectContext {
             let result = NSEntityDescription.insertNewObject(forEntityName: entityName, into: manageContext)
             result.syncJson(jsonObject)
-            result.manageObjectDidCreate()
+            result.objectDidCreate()
             return result
         }
         return nil

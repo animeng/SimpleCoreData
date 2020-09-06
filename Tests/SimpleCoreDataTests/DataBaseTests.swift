@@ -27,7 +27,7 @@ class DataBaseTests: XCTestCase {
         observal?.observer({ (persons) in
             for person in persons {
                 switch person{
-                case .insert(let index, let content):
+                case .insert(let content):
                     print(content)
                 default:
                     break

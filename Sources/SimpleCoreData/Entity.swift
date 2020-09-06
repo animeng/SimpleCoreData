@@ -10,6 +10,7 @@ import Foundation
 
 public protocol Entity:Equatable {
     var primeKey:String {get}
+    func objectDidCreate()
 }
 
 public func == <T:Entity>(lhs: T, rhs: T) -> Bool {

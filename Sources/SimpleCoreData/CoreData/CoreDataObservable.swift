@@ -27,7 +27,10 @@ public class CoreDataObservable<T:Entity>:NSObject,DBObservable,NSFetchedResults
         guard let entity = T.self as? NSManagedObject.Type,
             let entityName = entity.entityName,
             let managerContext = context as? NSManagedObjectContext
-        else{ fatalError("is not NSManagedObjectContext") }
+        else {
+            fatalError("is not NSManagedObjectContext")
+        }
+        
         let fetchRequest: NSFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         fetchRequest.sortDescriptors = []
         fetchRequest.fetchBatchSize = 1
