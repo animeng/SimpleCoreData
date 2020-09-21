@@ -18,24 +18,25 @@ extension Person {
 class ViewController: UIViewController {
     
     let database:some Storage = DBFactory.openDB(objectModelName: "SimpleDataBase", dbName: "TestCoreData")
-    
-    var observal:CoreDataObservable<Person>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        observal = CoreDataObservable<Person>(context: database.context)
-//
-//        observal?.observer({ (persons) in
-//            for person in persons {
-//                switch person{
-//                case .insert(let content):
-//                    print(content)
-//                default:
-//                    break
-//                }
-//            }
-//        })
-//        print(database.storePath())
+        let observal = DBFactory.addObserver(database,type:Person.self)
+        observal.observer { (persons) in
+            for person in persons {
+                switch person{
+                case .insert(let content):
+                    print(content)
+                default:
+                    break
+                }
+            }
+        }
+        print(database.storePath())
+    }
+    
+    deinit {
+        DBFactory.removeObserver(database, type: Person.self)
     }
     
     @IBAction func click(_ sender: Any) {
@@ -48,8 +49,7 @@ class ViewController: UIViewController {
     
     func createInMainThread() {
         let user:Person = try! self.database.context.create()
-        user.name = "hanmeimei"
-        user.uid = "key"
+        user.syncDictionary(["name":"hello","uid":"key"])
         try? self.database.context.saveData()
     }
     

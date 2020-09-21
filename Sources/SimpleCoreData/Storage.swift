@@ -9,6 +9,7 @@
 import Foundation
 
 public protocol Storage:CustomStringConvertible,Equatable {
+    
     var storeFileName:String {get set}
     
     func storePath() -> URL

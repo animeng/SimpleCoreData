@@ -10,6 +10,7 @@ import Foundation
 
 public protocol Entity:Equatable {
     var primeKey:String {get}
+    func syncDictionary(_ jsonObject: [String:Any])
     func objectDidCreate()
 }
 

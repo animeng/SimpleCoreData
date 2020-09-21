@@ -28,7 +28,7 @@ extension NSManagedObject:Entity {
         return nil
     }
     
-    open func syncJson(_ jsonObject:[String:Any]) {
+    open func syncDictionary(_ jsonObject:[String:Any]) {
         var managerProperties:[String : String] = [:]
         for property in entity.properties {
             managerProperties[property.name] = property.name
@@ -61,7 +61,7 @@ extension NSManagedObject:Entity {
                            by jsonObject: [String : Any]) -> NSManagedObject? {
         if let manageContext = context as? NSManagedObjectContext {
             let result = NSEntityDescription.insertNewObject(forEntityName: entityName, into: manageContext)
-            result.syncJson(jsonObject)
+            result.syncDictionary(jsonObject)
             result.objectDidCreate()
             return result
         }

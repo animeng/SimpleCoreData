@@ -35,44 +35,35 @@ public struct FetchRequest<T: Entity>: Equatable {
     }
     
     public func filtered(with predicate: NSPredicate) -> FetchRequest<T> {
-        return self
-            .request(withPredicate: predicate)
+        return self.request(withPredicate: predicate)
     }
     
     public func filtered(with key: String, equalTo value: String) -> FetchRequest<T> {
-        return self
-            .request(withPredicate: NSPredicate(format: "\(key) == %@", value))
+        return self.request(withPredicate: NSPredicate(format: "\(key) == %@", value))
     }
     
     public func filtered(with key: String, in value: [String]) -> FetchRequest<T> {
-        return self
-            .request(withPredicate: NSPredicate(format: "\(key) IN %@", value))
+        return self.request(withPredicate: NSPredicate(format: "\(key) IN %@", value))
     }
     
     public func filtered(with key: String, notIn value: [String]) -> FetchRequest<T> {
-        return self
-            .request(withPredicate: NSPredicate(format: "NOT (\(key) IN %@)", value))
+        return self.request(withPredicate: NSPredicate(format: "NOT (\(key) IN %@)", value))
     }
     
-    
     public func sorted(with sortDescriptor: NSSortDescriptor) -> FetchRequest<T> {
-        return self
-            .request(withSortDescriptor: sortDescriptor)
+        return self.request(withSortDescriptor: sortDescriptor)
     }
     
     public func sorted(with key: String?, ascending: Bool, comparator cmptr: @escaping Comparator) -> FetchRequest<T> {
-        return self
-            .request(withSortDescriptor: NSSortDescriptor(key: key, ascending: ascending, comparator: cmptr))
+        return self.request(withSortDescriptor: NSSortDescriptor(key: key, ascending: ascending, comparator: cmptr))
     }
     
     public func sorted(with key: String?, ascending: Bool) -> FetchRequest<T> {
-        return self
-            .request(withSortDescriptor: NSSortDescriptor(key: key, ascending: ascending))
+        return self.request(withSortDescriptor: NSSortDescriptor(key: key, ascending: ascending))
     }
     
     public func sorted(with key: String?, ascending: Bool, selector: Selector) -> FetchRequest<T> {
-        return self
-            .request(withSortDescriptor: NSSortDescriptor(key: key, ascending: ascending, selector: selector))
+        return self.request(withSortDescriptor: NSSortDescriptor(key: key, ascending: ascending, selector: selector))
     }
     
     func request(withPredicate predicate: NSPredicate) -> FetchRequest<T> {

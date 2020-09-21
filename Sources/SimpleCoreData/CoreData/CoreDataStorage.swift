@@ -9,11 +9,11 @@
 import Foundation
 import CoreData
 
-public class CoreDataStorage: Storage {
+class CoreDataStorage: Storage {
     
     public var storeFileName: String
     /// 一般需要操作ui的时候建议使用maincontext获取数据
-    public var mainContext: Context!
+    private var mainContext: Context!
     /// 后台线程的context，一般修改，删除，插入保存数据时候，建议使用这个context
     private var privateContext:Context!
     private var saveContext: Context!

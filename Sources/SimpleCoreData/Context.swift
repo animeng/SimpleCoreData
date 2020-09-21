@@ -9,14 +9,17 @@
 import Foundation
 
 public protocol Context {
-    func fetch<T: Entity>(_ request: FetchRequest<T>) throws -> [T]
+    
     func asynFetch<T:Entity>(_ request: FetchRequest<T>,complete:(([T]) -> Void)?)
+    
+    func fetch<T: Entity>(_ request: FetchRequest<T>) throws -> [T]
     func insert<T: Entity>(_ entity: T) throws
     func create<T: Entity>() throws -> T
     func remove<T: Entity>(_ objects: [T]) throws
     func remove<T: Entity>(_ object: T) throws
     func removeAll<T: Entity>(_ type:T.Type) throws
     func saveData() throws
+    
 }
 
 public extension Context {

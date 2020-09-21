@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-public class CoreDataObservable<T:Entity>:NSObject,DBObservable,NSFetchedResultsControllerDelegate {
+class CoreDataObservable<T:Entity>:NSObject,DBObservable,NSFetchedResultsControllerDelegate {
     
     public typealias Elment = T
     internal var observer: (([StorageDataChange<T>]) -> Void)?
