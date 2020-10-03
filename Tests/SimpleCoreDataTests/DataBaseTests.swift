@@ -18,7 +18,7 @@ extension Person:Entity {
 class DataBaseTests: XCTestCase {
     let timeout: TimeInterval = 30.0
     var observal:CoreDataObservable<Person>?
-    let database = CoreDataStorage(objectModelName: "test", fileName: "hehe",bundle:Bundle(for: DataBaseTests.self))
+    let database = CoreDataStorage(objectModelName: "test", fileName: "testDatabase",bundle:Bundle(for: DataBaseTests.self))
     
     override func setUp() {
         super.setUp()
