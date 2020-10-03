@@ -44,8 +44,8 @@ class DataBaseTests: XCTestCase {
     func testSubThreadCreate() {
         self.database.backgroundOperation({ (context, save) in
             let user:Person = try! context.create()
-            user.name = "lili"
-            user.uid = "bg"
+            user.name = "Lucas"
+            user.uid = UUID().uuidString
             save()
         }) { (error) in
             
@@ -75,8 +75,8 @@ class DataBaseTests: XCTestCase {
     
     func testMainThreadCreate() {
         let user:Person = try! self.database.mainContext.create()
-        user.name = "hanmeimei"
-        user.uid = "key"
+        user.name = "Anna"
+        user.uid = UUID().uuidString
         try? self.database.mainContext.saveData()
     }
     
